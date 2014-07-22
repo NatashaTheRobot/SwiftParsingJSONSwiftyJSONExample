@@ -1,0 +1,31 @@
+ [{
+  "name": "Dave",
+  "traits": {
+    "numberOfEyes": 2,
+    "height": 105,
+    "hair": "Flat, Centre-parted",
+    "loves": "Rockets & Missiles",
+    "hates": "Waiting"
+  },
+  "movie_moment": "exploding foundtain of minions"
+  }, {
+  "name": "Stuart",
+  "traits": {
+    "numberOfEyes": 1,
+    "height": 94,
+    "hair": "Flat, Centre-parted",
+    "loves": "Playing & Laughing",
+    "hates": "Bullied by other minions"
+  },
+  "movie_moment": "becoming a minion-sized glow stick"
+  }, {
+  "name": "Jorge",
+  "traits": {
+    "numberOfEyes": 2,
+    "height": 96,
+    "hair": "Standing straight up",
+    "loves": "making photocopies of his bottom",
+    "hates": "Running"
+  },
+  "movie_moment": "printing images of his fat and round bottom"
+  }]

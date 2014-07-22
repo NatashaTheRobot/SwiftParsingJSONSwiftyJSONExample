@@ -1,0 +1,32 @@
+{
+    "Dave": {
+        "Traits": {
+            "numberOfEyes": 2,
+            "height": 105,
+            "hair": "Flat, Centre-parted",
+            "loves": "Rockets & Missiles",
+            "hates": "Waiting"
+        },
+        "Movie Moment": "exploding foundtain of minions"
+    },
+    "Stuart": {
+        "Traits": {
+            "numberOfEyes": 1,
+            "height": 94,
+            "hair": "Flat, Centre-parted",
+            "loves": "Playing & Laughing",
+            "hates": "Bullied by other minions"
+        },
+        "Movie Moment": "becoming a minion-sized glow stick"
+    },
+    "Jorge": {
+        "Traits": {
+            "numberOfEyes": 2,
+            "height": 96,
+            "hair": "Standing straight up",
+            "loves": "making photocopies of his bottom",
+            "hates": "Running"
+        },
+        "Movie Moment": "printing images of his fat and round bottom"
+    }
+}
