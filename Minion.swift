@@ -21,17 +21,17 @@ class Minion {
     class func fetchMinionData() -> [Minion] {
         let dataFileName = "minionsArray"
         
-        let dataURL = NSBundle.mainBundle().URLForResource(dataFileName, withExtension: "json")
+        let dataURL = NSBundle.mainBundle().URLForResource(dataFileName, withExtension: "json")!
         
         var dataError: NSError?
-        let data = NSData.dataWithContentsOfURL(dataURL, options: NSDataReadingOptions.DataReadingMappedIfSafe, error: &dataError)
+        let data = NSData(contentsOfURL: dataURL, options: NSDataReadingOptions.DataReadingMappedIfSafe, error: &dataError)
         
         let minionJSON = JSONValue(data)
         
         var minions = [Minion]()
         
         for minionDictionary in minionJSON {
-            minions += Minion(minionDetails: minionDictionary)
+            minions.append(Minion(minionDetails: minionDictionary))
         }
         
         return minions

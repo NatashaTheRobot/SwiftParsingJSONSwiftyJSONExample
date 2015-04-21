@@ -162,7 +162,7 @@ enum JSONValue {
             }
             self = .JNumber(value)
         case let value as NSString:
-            self = .JString(value)
+            self = .JString(value as String)
         case let value as NSNull:
             self = .JNull
         case let value as NSArray:
@@ -180,7 +180,7 @@ enum JSONValue {
                 if let key = possibleJsonKey as? NSString {
                     let jsonValue = JSONValue(possibleJsonValue)
                     if jsonValue {
-                        jsonObject[key] = jsonValue
+                        jsonObject[key as String] = jsonValue
                     }
                 }
             }
@@ -328,8 +328,8 @@ extension JSONValue: Printable {
     }
 }
 
-extension JSONValue: LogicValue {
-    func getLogicValue() -> Bool {
+extension JSONValue: BooleanType {
+    var boolValue: Bool {
         switch self {
         case .JInvalid:
             return false
@@ -394,7 +394,7 @@ func ==(lhs: JSONValue, rhs: JSONValue) -> Bool {
 
 // MARK: Sequence Protocol
 
-extension JSONValue: Sequence {
+extension JSONValue: SequenceType {
     func generate() -> JSONArrayGenerator {
         return JSONArrayGenerator(value: self)
     }
@@ -402,7 +402,7 @@ extension JSONValue: Sequence {
 
 var indexInSequence = 0
 
-struct JSONArrayGenerator: Generator {
+struct JSONArrayGenerator: GeneratorType {
     
     let value: JSONValue
     
