@@ -12,7 +12,7 @@ class MinionsTableViewController: UITableViewController {
 
     let minions: [Minion]
     
-    init(coder aDecoder: NSCoder!) {
+    required init(coder aDecoder: NSCoder!) {
         
         minions = Minion.fetchMinionData()
         
@@ -26,28 +26,22 @@ class MinionsTableViewController: UITableViewController {
 
     // MARK: Table view data source
 
-    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
-        
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return minions.count
     }
 
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell? {
-        let cell = tableView.dequeueReusableCellWithIdentifier("minionCell", forIndexPath: indexPath) as UITableViewCell
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("minionCell", forIndexPath: indexPath) as! UITableViewCell
 
         let minion = minions[indexPath.row]
         
-        if let name = minion.name {
-            cell.imageView.image = UIImage(named: minion.name)
-            cell.textLabel.text = minion.name
-        } else {
-            cell.imageView.image = UIImage(named: "Dave")
-            cell.textLabel.text = "Minion"
-        }
-        
+        cell.imageView?.image = UIImage(named: minion.name ?? "Dave")
+        cell.textLabel?.text = minion.name ?? "Minion"
+
         if let loves = minion.loves {
-            cell.detailTextLabel.text = "Loves \(loves.lowercaseString)"
+            cell.detailTextLabel?.text = "Loves \(loves.lowercaseString)"
         } else {
-            cell.detailTextLabel.text = "Loves everything under the sun"
+            cell.detailTextLabel?.text = "Loves everything under the sun"
         }
 
         return cell
